@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.git
+.gitignore
+sample_audio/
+
+venv/
+__pycache__/
+.git
+.env
+sample_audio/

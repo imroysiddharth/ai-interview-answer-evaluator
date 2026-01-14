@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ai-interview-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    image: ai-interview-ui
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://backend:8000/evaluate
+    depends_on:
+      - backend
